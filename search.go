@@ -10,10 +10,7 @@ import (
     "reflect"
 )
 
-func search_file(filename string, search_key string, search_value string) int {
-    // TODO: Test with really big data sets to see if its worth caching the file contents.
-    //       Assumes repeated searches of the same dataset in interactive mode 
-
+func parse_file(filename string) []map[string]interface{} {
     println("Reading", filename)
     bytes, err := ioutil.ReadFile(filename)
     check(err)
@@ -25,9 +22,15 @@ func search_file(filename string, search_key string, search_value string) int {
 
     // TODO: Test behaviour of parser with malformed and "valid json,
     // but not arranged like this" input
+    // TODO: Also, slightly more graceful error handling
     if err := json.Unmarshal(bytes, &json_data); err != nil {
         panic(err)
     }
+    return json_data
+}
+
+func search_file(filename string, search_key string, search_value string) int {
+    json_data := parse_file(filename)
     return search_json(json_data, search_key, search_value)
 }
 
