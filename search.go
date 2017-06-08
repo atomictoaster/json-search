@@ -11,7 +11,7 @@ import (
     "time"
 )
 
-func parse_file(filename string) []map[string]interface{} {
+func parse_file(filename string) (bool, []map[string]interface{}) {
 
     start := time.Now()
     
@@ -21,19 +21,20 @@ func parse_file(filename string) []map[string]interface{} {
     // We expect an array, of maps, of strings to $something
     var json_data []map[string]interface{}
 
-    // TODO: Test behaviour of parser with malformed and "valid json,
-    // but not arranged like this" input
-    // TODO: Also, slightly more graceful error handling would be nice
     if err := json.Unmarshal(bytes, &json_data); err != nil {
-        panic(err)
+        fmt.Printf("Could not parse %v: %v\n", filename, err)
+	return false, nil
     }
     fmt.Printf("Parsed %v in %v\n", filename, time.Now().Sub(start))
-    return json_data
+    return true, json_data
 }
 
 func search_file(filename string, search_key string, search_value string) int {
-    json_data := parse_file(filename)
-    return search_json(json_data, search_key, search_value)
+    valid, json_data := parse_file(filename)
+    if valid {
+        return search_json(json_data, search_key, search_value)
+    }
+    return 0
 }
 
 func search_json(json_data []map[string]interface{}, search_key string, search_value string) int {

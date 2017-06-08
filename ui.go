@@ -32,7 +32,6 @@ func scan_or_exit(scanner *bufio.Scanner) {
 func enter_interactive_loop(directory string) {
     scanner := bufio.NewScanner(os.Stdin)
 
-    // TODO: Write something appropriate here
     println("JSON Search Tool")
 
     datasets := find_datasets(directory)
@@ -68,7 +67,10 @@ func find_datasets(directory string) []dataset {
 
 func unpack_dataset(set *dataset) bool {
     if set.json_data == nil {
-        (*set).json_data = parse_file(set.path_to_file)
+        valid, json_data := parse_file(set.path_to_file)
+	if valid {
+            (*set).json_data = json_data
+	}
     }
     if set.json_data != nil {
         return true
@@ -102,7 +104,7 @@ func select_dataset(state uistate) uistate {
         } else {
 	    badset := state.datasets[index-1]
             fmt.Printf("Data source %v is corrupted. Please choose again.\n", badset.title)
-            badset.title = ""
+            state.datasets[index-1].title = ""
         }
 
     } else {
@@ -127,8 +129,8 @@ func select_field(state uistate) uistate {
     user_input := state.scanner.Text()
 
     if len(user_input) == 0 {
-        // TODO: Could we ever wish to search all fields for a specific value?
-        fmt.Printf("Invalid selection", user_input)
+        // Could we ever wish to search all fields for a specific value?
+        fmt.Printf("Invalid selection")
         
     } else if strings.Compare(user_input, "quit") == 0 {
         state.phase = -1
@@ -163,7 +165,6 @@ func select_value(state uistate) uistate {
     user_input := state.scanner.Text()
 
     if len(user_input) == 0 {
-        // TODO: Add a confirmation here?
         fmt.Printf("Searching for empty '%v' fields", state.key)
 
     } else if strings.Compare(user_input, "quit") == 0 {
