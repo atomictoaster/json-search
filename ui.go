@@ -108,17 +108,17 @@ func select_dataset(state uistate) uistate {
         }
 
     } else {
-        fmt.Printf("Invalid selection: '%v'.\n", user_input)
+        fmt.Printf("Invalid selection: '%v'.  Enter the number of a dataset instead.\n", user_input)
     }
 
     return state
 }
 
 func prompt_for_input(prompt string, help string) {
-    fmt.Printf("\nEnter a %v to search for:\n", prompt)
-    fmt.Printf("   '?' to see %v,\n", help)
+    fmt.Printf("\n   '?' to see %v\n", help)
     fmt.Printf("   '..' to go back\n")
     fmt.Printf("   'quit' to exit\n")
+    fmt.Printf("\nEnter a %v to search for:\n", prompt)
 }
 
 func select_field(state uistate) uistate {
@@ -141,7 +141,7 @@ func select_field(state uistate) uistate {
     } else if strings.Compare(user_input, "?") == 0 {
         if len(state.active_set.json_data) > 0 {
             // Assume for now that records are sufficiently uniform
-            fmt.Printf("\n%v records contain the following fields\n", strings.TrimSuffix(state.active_set.title, "s"))
+            fmt.Printf("\n%v records contain the following fields:\n", strings.TrimSuffix(state.active_set.title, "s"))
             for key, _:= range state.active_set.json_data[0] { 
                   fmt.Printf("* %s\n", key)
             }
