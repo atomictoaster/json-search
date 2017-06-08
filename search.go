@@ -3,12 +3,12 @@ package main
 import (
     "fmt"
     "io/ioutil"
-    "os"
     "encoding/json"
     "strings"
     "strconv"
     "reflect"
     "time"
+    "sort"
 )
 
 func parse_file(filename string) (bool, []map[string]interface{}) {
@@ -16,14 +16,17 @@ func parse_file(filename string) (bool, []map[string]interface{}) {
     start := time.Now()
     
     bytes, err := ioutil.ReadFile(filename)
-    check(err)
+    if err != nil {
+        fmt.Printf("Could not read %v: %v\n", filename, err)
+        return false, nil
+    }
 
     // We expect an array, of maps, of strings to $something
     var json_data []map[string]interface{}
 
     if err := json.Unmarshal(bytes, &json_data); err != nil {
         fmt.Printf("Could not parse %v: %v\n", filename, err)
-	return false, nil
+        return false, nil
     }
     fmt.Printf("Parsed %v in %v\n", filename, time.Now().Sub(start))
     return true, json_data
@@ -37,6 +40,19 @@ func search_file(filename string, search_key string, search_value string) int {
     return 0
 }
 
+func print_record(result map[string]interface{}) {
+    // Not exactly efficient to recompute every time
+    // But reliable if any additional fields sneak in
+    keys := make([]string, 0)
+    for key, _:= range result {
+        keys = append(keys, key)
+    }
+    sort.Strings(keys)
+
+    for _, key := range keys {
+        fmt.Printf(" %20v:  %v\n", key, result[key])
+    }
+}
 func search_json(json_data []map[string]interface{}, search_key string, search_value string) int {
 
     start := time.Now()
@@ -61,14 +77,14 @@ func search_json(json_data []map[string]interface{}, search_key string, search_v
             string_value = strconv.FormatFloat(value.(float64), 'f', 0, 64);
         case string:
             string_value = value.(string)
-	case []interface{}:
+        case []interface{}:
             for _, entry := range typed_value {
-	        // TODO: Handle other types too
+                // TODO: Handle other types too
                 if strings.Compare(entry.(string), search_value) == 0 {
                     return true
-	        }
+                }
             }
-	    return false
+            return false
         default:
             unhandled := reflect.Indirect(reflect.ValueOf(value))
             fmt.Println("Unhandled type", unhandled.Kind(), "in filter for key", search_key)
@@ -80,28 +96,25 @@ func search_json(json_data []map[string]interface{}, search_key string, search_v
         }
         return false
     })
+
     num_results := len(results)
-    if num_results > 0 {
-        // TODO: This output is awful
-        enc := json.NewEncoder(os.Stdout)
-        enc.Encode(results)
-    }
     fmt.Printf("%v record(s) found in %v\n", num_results, time.Now().Sub(start))
+
+    for index , record := range results {
+        fmt.Printf("\n**** Result[%v]\n", index)
+        print_record(record)
+    }
+
     return num_results
 }
 
-func check(e error) {
-    if e != nil {
-        panic(e)
-    }
-}
-
-func Filter(vs []map[string]interface{}, f func(map[string]interface{}) bool) []map[string]interface{} {
-    vsf := make([]map[string]interface{}, 0)
-    for _, v := range vs {
-        if f(v) {
-            vsf = append(vsf, v)
+func Filter(input []map[string]interface{}, filter_function func(map[string]interface{}) bool) []map[string]interface{} {
+    results := make([]map[string]interface{}, 0)
+    for _, element := range input {
+        if filter_function(element) {
+            results = append(results, element)
         }
     }
-    return vsf
+    return results
 }
+
