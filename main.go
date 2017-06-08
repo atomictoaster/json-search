@@ -5,9 +5,10 @@ import (
 )
 
 func main() {
+    datadir := flag.String("data", "./", "File containing valid JSON")
     filename := flag.String("filename", "./users.json", "File containing valid JSON")
     search_key := flag.String("key", "", "JSON key to search for")
-    search_value := flag.String("value", "Catalina Simpson", "Value which the specified key must contain")
+    search_value := flag.String("value", "", "Value which the specified key must contain")
 
     flag.Parse()
     if len(*filename) > 0 && len(*search_key) > 0 {
@@ -17,5 +18,5 @@ func main() {
         os.Exit(1) // No result found
     }
 
-    enter_interactive_loop()
+    enter_interactive_loop(*datadir)
 }
