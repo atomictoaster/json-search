@@ -8,24 +8,26 @@ import (
     "strings"
     "strconv"
     "reflect"
+    "time"
 )
 
 func parse_file(filename string) []map[string]interface{} {
-    println("Reading", filename)
+
+    start := time.Now()
+    
     bytes, err := ioutil.ReadFile(filename)
     check(err)
-
-    println("Parsing", filename)
 
     // We expect an array, of maps, of strings to $something
     var json_data []map[string]interface{}
 
     // TODO: Test behaviour of parser with malformed and "valid json,
     // but not arranged like this" input
-    // TODO: Also, slightly more graceful error handling
+    // TODO: Also, slightly more graceful error handling would be nice
     if err := json.Unmarshal(bytes, &json_data); err != nil {
         panic(err)
     }
+    fmt.Printf("Parsed %v in %v\n", filename, time.Now().Sub(start))
     return json_data
 }
 
@@ -36,7 +38,9 @@ func search_file(filename string, search_key string, search_value string) int {
 
 func search_json(json_data []map[string]interface{}, search_key string, search_value string) int {
 
-    println("Filtering", len(json_data), "records based on", search_key, "=", search_value)
+    start := time.Now()
+    
+    fmt.Printf("Filtering %v records based on '%v'='%v'\n", len(json_data), search_key, search_value)
     results := Filter(json_data, func(v map[string]interface{}) bool {
         value := v[search_key]
         if value == nil && len(search_value) == 0 {
@@ -47,7 +51,7 @@ func search_json(json_data []map[string]interface{}, search_key string, search_v
         }
         string_value := ""
 
-        switch value.(type) {
+        switch typed_value := value.(type) {
         case bool:
             string_value = strconv.FormatBool(value.(bool));
         case int64:
@@ -56,8 +60,13 @@ func search_json(json_data []map[string]interface{}, search_key string, search_v
             string_value = strconv.FormatFloat(value.(float64), 'f', 0, 64);
         case string:
             string_value = value.(string)
-	case []interface {}:
-	    // TODO: Handle arrays
+	case []interface{}:
+            for _, entry := range typed_value {
+	        // TODO: Handle other types too
+                if strings.Compare(entry.(string), search_value) == 0 {
+                    return true
+	        }
+            }
 	    return false
         default:
             unhandled := reflect.Indirect(reflect.ValueOf(value))
@@ -72,10 +81,11 @@ func search_json(json_data []map[string]interface{}, search_key string, search_v
     })
     num_results := len(results)
     if num_results > 0 {
+        // TODO: This output is awful
         enc := json.NewEncoder(os.Stdout)
         enc.Encode(results)
     }
-    println(num_results, "record(s) found")
+    fmt.Printf("%v record(s) found in %v\n", num_results, time.Now().Sub(start))
     return num_results
 }
 
