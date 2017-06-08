@@ -23,6 +23,12 @@ type uistate struct {
      scanner *bufio.Scanner
 }
 
+func scan_or_exit(scanner *bufio.Scanner) {
+    if scanner.Scan() == false && scanner.Err() == nil {
+        os.Exit(0)
+    }
+}
+
 func enter_interactive_loop(directory string) {
     scanner := bufio.NewScanner(os.Stdin)
 
@@ -80,7 +86,7 @@ func select_dataset(state uistate) uistate {
     }
     fmt.Printf("\n# ")
 
-    state.scanner.Scan()
+    scan_or_exit(state.scanner)
     user_input := state.scanner.Text()
     if strings.Compare("quit", strings.ToLower(user_input)) == 0 {
         state.phase = -1
@@ -108,7 +114,7 @@ func select_dataset(state uistate) uistate {
 
 func select_field(state uistate) uistate {
     fmt.Printf("\nEnter a term to search for, '?' to see available fields, or '..' to go back\n%v # ", state.active_set.title)
-    state.scanner.Scan()
+    scan_or_exit(state.scanner)
     user_input := state.scanner.Text()
     if len(user_input) == 0 {
         // TODO: Could we ever wish to search all fields for a specific value?
@@ -141,7 +147,7 @@ func select_field(state uistate) uistate {
 
 func select_value(state uistate) uistate {
     fmt.Printf("\nEnter a value to search for, '?' to see an example value, or '..' to go back\n%v[%v] # ", state.active_set.title, state.key)
-    state.scanner.Scan()
+    scan_or_exit(state.scanner)
     user_input := state.scanner.Text()
     if len(user_input) == 0 {
         // TODO: Add a confirmation here?
@@ -175,8 +181,6 @@ func select_value(state uistate) uistate {
     return state
 }
 
-
-// TODO: Handle ctrl-d
 func request_search_fields(datasets []dataset, scanner *bufio.Scanner) (string, string, *dataset) {
 
     state := uistate{0, nil, "", "", datasets, scanner}
