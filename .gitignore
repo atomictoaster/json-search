@@ -3,6 +3,7 @@
 *.dll
 *.so
 *.dylib
+json_search
 
 # Test binary, build with `go test -c`
 *.test
