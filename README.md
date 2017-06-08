@@ -1,5 +1,18 @@
 # json-search
 
+## Asumptions & Limitations
+
+- A moderately modern linux (Centos 7.2 tested).
+- Datasets are located in the same directory.
+- Records within a dataset contain a sufficently uniform set of keys
+  to use the first few records when providing sample values and key
+  list.
+- No explicit consideration of non-ascii characters was made for this
+  version.
+- No fields or values will be named 'quit', '?', or '..'
+- No-one would create a directory with a '.json' suffix in the data
+  directory.
+
 ## Requirements
 
 Core
@@ -11,6 +24,12 @@ Supplimental (build, dataset generation, etc)
 - bash-4.2.46-20.el7_2
 - make-3.82-21.el7
 - words-3.0-22.el7
+
+## Performance
+
+- Search 1,000 records:         
+- Search 1,000,000 records:     
+- Search 1,000,000,000 records: 
 
 ## Build
 
