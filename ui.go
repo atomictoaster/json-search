@@ -33,7 +33,7 @@ func enter_interactive_loop(directory string) {
     scanner := bufio.NewScanner(os.Stdin)
 
     // TODO: Write something appropriate here
-    println("Searchy searchy")
+    println("JSON Search Tool")
 
     datasets := find_datasets(directory)
 
@@ -112,10 +112,20 @@ func select_dataset(state uistate) uistate {
     return state
 }
 
+func prompt_for_input(prompt string, help string) {
+    fmt.Printf("\nEnter a %v to search for:\n", prompt)
+    fmt.Printf("   '?' to see %v,\n", help)
+    fmt.Printf("   '..' to go back\n")
+    fmt.Printf("   'quit' to exit\n")
+}
+
 func select_field(state uistate) uistate {
-    fmt.Printf("\nEnter a term to search for, '?' to see available fields, or '..' to go back\n%v # ", state.active_set.title)
+    prompt_for_input("term", "available fields")
+    fmt.Printf("%v # ", state.active_set.title)
+
     scan_or_exit(state.scanner)
     user_input := state.scanner.Text()
+
     if len(user_input) == 0 {
         // TODO: Could we ever wish to search all fields for a specific value?
         fmt.Printf("Invalid selection", user_input)
@@ -129,7 +139,7 @@ func select_field(state uistate) uistate {
     } else if strings.Compare(user_input, "?") == 0 {
         if len(state.active_set.json_data) > 0 {
             // Assume for now that records are sufficiently uniform
-                  fmt.Printf("\n%v records contain the following fields\n", strings.TrimSuffix(state.active_set.title, "s"))
+            fmt.Printf("\n%v records contain the following fields\n", strings.TrimSuffix(state.active_set.title, "s"))
             for key, _:= range state.active_set.json_data[0] { 
                   fmt.Printf("* %s\n", key)
             }
@@ -146,9 +156,12 @@ func select_field(state uistate) uistate {
 }
 
 func select_value(state uistate) uistate {
-    fmt.Printf("\nEnter a value to search for, '?' to see an example value, or '..' to go back\n%v[%v] # ", state.active_set.title, state.key)
+    prompt_for_input("value", "example values")
+    fmt.Printf("%v[%v] # ", state.active_set.title, state.key)
+
     scan_or_exit(state.scanner)
     user_input := state.scanner.Text()
+
     if len(user_input) == 0 {
         // TODO: Add a confirmation here?
         fmt.Printf("Searching for empty '%v' fields", state.key)
@@ -158,9 +171,9 @@ func select_value(state uistate) uistate {
 
     } else if strings.Compare(user_input, "?") == 0 {
         if len(state.active_set.json_data) > 0 {
-            fmt.Printf("\n%v records contain the following fields\n", strings.TrimSuffix(state.active_set.title, "s"))
+            fmt.Printf("\n%v records contain values like:\n", strings.TrimSuffix(state.active_set.title, "s"))
 		
-            // TODO: Handle complex types (arrays)
+            // TODO: Nicer handling complex types (arrays) 
             for index, record := range state.active_set.json_data { 
                 fmt.Printf("* %v\n", record[state.key])
                 if index > 2 {
@@ -200,7 +213,6 @@ func request_search_fields(datasets []dataset, scanner *bufio.Scanner) (string, 
             default:
 	        state.phase = 0
 	}
-    }
-	       
+    }	       
 }
 
