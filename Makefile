@@ -11,10 +11,10 @@ perfdata:
 	for n in $(SIZES); do echo "Creating organizations-$$n.json"; build-data.sh data/organizations-$$n.json $$n; done
 
 test:
-	for t in $(TESTS); do json_search -filename data/$$t.json -key tags -value Veguita; done | sed -e 's/found in.*//' -e 's/Parsed .* in .*//' > parser.out
-	diff -u parser.expected parser.out
-	cat data/session | json_search | sed -e 's/found in.*//' -e 's/Parsed .* in .*//' > session.out
-	diff -u session.expected session.out
+	for t in $(TESTS); do json_search -filename data/$$t.json -key tags -value Veguita; done | sed -e 's/found in.*//' -e 's/Parsed .* in .*//' > data/parser.out
+	diff -u data/parser.{expected,out}
+	cat data/session | json_search | sed -e 's/found in.*//' -e 's/Parsed .* in .*//' > data/session.out
+	diff -u data/session.{expected,out}
 
 perf: 
 	for n in $(SIZES); do json_search -filename data/organizations-$$n.json -key _id -value 678; done
