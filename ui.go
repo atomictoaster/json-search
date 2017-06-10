@@ -54,7 +54,7 @@ func scan_or_exit(scanner *bufio.Scanner) string {
 func enter_interactive_loop(directory string) {
     scanner := bufio.NewScanner(os.Stdin)
 
-    println("JSON Search Tool")
+    fmt.Println("JSON Search Tool")
 
     datasets := find_datasets(directory)
     state := ui_search_state{0, nil, "", "", datasets, scanner}
