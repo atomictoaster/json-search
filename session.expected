@@ -363,3 +363,247 @@ Enter a value to search Users[role] # Searching 75 records for entries with 'rol
    or enter to continue
 
 17 results remaining # 
+**** Result[11/26]
+                    _id:  31
+                 active:  true
+                  alias:  Miss Carroll
+             created_at:  2016-01-10T05:55:31 -11:00
+                  email:  carrollraymond@flotonic.com
+            external_id:  e9121c21-0321-4024-a844-5d869ddc1343
+          last_login_at:  2016-06-06T04:20:09 -10:00
+                 locale:  zh-CN
+                   name:  Jessica Raymond
+        organization_id:  104
+                  phone:  9794-023-473
+                   role:  end-user
+                 shared:  false
+              signature:  Don't Worry Be Happy!
+              suspended:  true
+                tags[0]:  Chalfant
+                tags[1]:  Calverton
+                tags[2]:  Flintville
+                tags[3]:  Yonah
+               timezone:  Greece
+                    url:  http://initech.zendesk.com/api/v2/users/31.json
+               verified:  false
+
+**** Result[12/26]
+                    _id:  36
+                 active:  false
+                  alias:  Mr Nielsen
+             created_at:  2016-07-28T04:55:50 -10:00
+                  email:  nielsennash@flotonic.com
+            external_id:  4a0e0eda-f027-4727-910f-148d2b7ab103
+          last_login_at:  2013-06-08T01:53:28 -10:00
+                 locale:  zh-CN
+                   name:  Craig Nash
+        organization_id:  115
+                  phone:  8894-673-477
+                   role:  end-user
+                 shared:  true
+              signature:  Don't Worry Be Happy!
+              suspended:  false
+                tags[0]:  Independence
+                tags[1]:  Bainbridge
+                tags[2]:  Goodville
+                tags[3]:  Gasquet
+               timezone:  Swaziland
+                    url:  http://initech.zendesk.com/api/v2/users/36.json
+               verified:  true
+
+**** Result[13/26]
+                    _id:  40
+                 active:  true
+                  alias:  Mr Neal
+             created_at:  2016-07-16T09:13:47 -10:00
+                  email:  nealengland@flotonic.com
+            external_id:  e79e166e-fcb5-4604-9466-1ea9777c6eb5
+          last_login_at:  2015-10-20T01:25:19 -11:00
+                 locale:  zh-CN
+                   name:  Burgess England
+        organization_id:  113
+                  phone:  9675-282-161
+                   role:  end-user
+                 shared:  true
+              signature:  Don't Worry Be Happy!
+              suspended:  true
+                tags[0]:  Riceville
+                tags[1]:  Ribera
+                tags[2]:  Caberfae
+                tags[3]:  Breinigsville
+               timezone:  Taiwan
+                    url:  http://initech.zendesk.com/api/v2/users/40.json
+               verified:  false
+
+**** Result[14/26]
+                    _id:  41
+                 active:  false
+                  alias:  Miss Janet
+             created_at:  2016-01-12T10:26:24 -11:00
+                  email:  janetblack@flotonic.com
+            external_id:  497def74-ce88-442e-814c-2fb8ce945dd9
+          last_login_at:  2015-02-21T08:07:14 -11:00
+                 locale:  en-AU
+                   name:  Alvarez Black
+        organization_id:  106
+                  phone:  9464-452-234
+                   role:  end-user
+                 shared:  true
+              signature:  Don't Worry Be Happy!
+              suspended:  false
+                tags[0]:  Bend
+                tags[1]:  Troy
+                tags[2]:  Fedora
+                tags[3]:  Celeryville
+               timezone:  Finland
+                    url:  http://initech.zendesk.com/api/v2/users/41.json
+               verified:  false
+
+**** Result[15/26]
+                    _id:  43
+                 active:  true
+                  alias:  Mr Kaitlin
+             created_at:  2016-02-03T07:44:35 -11:00
+                  email:  kaitlincoleman@flotonic.com
+            external_id:  08a71e65-dd92-4774-966a-876766c0f962
+          last_login_at:  2012-10-29T10:06:17 -11:00
+                 locale:  en-AU
+                   name:  Charlene Coleman
+        organization_id:  122
+                  phone:  8204-383-661
+                   role:  end-user
+                 shared:  true
+              signature:  Don't Worry Be Happy!
+              suspended:  false
+                tags[0]:  Wyano
+                tags[1]:  Soudan
+                tags[2]:  Coinjock
+                tags[3]:  Mathews
+               timezone:  Maldives
+                    url:  http://initech.zendesk.com/api/v2/users/43.json
+               verified:  false
+
+**** Result[16/26]
+                    _id:  44
+                 active:  false
+                  alias:  Mr Gonzales
+             created_at:  2016-06-08T10:26:06 -10:00
+                  email:  gonzalesfloyd@flotonic.com
+            external_id:  b5d38224-29c5-4aea-81a4-0da83d0a3f80
+          last_login_at:  2014-11-04T08:34:49 -11:00
+                 locale:  de-CH
+                   name:  John Floyd
+                  phone:  9894-382-253
+                   role:  end-user
+                 shared:  false
+              signature:  Don't Worry Be Happy!
+              suspended:  false
+                tags[0]:  Dunlo
+                tags[1]:  Greer
+                tags[2]:  Crown
+                tags[3]:  Strong
+               timezone:  Hong Kong
+                    url:  http://initech.zendesk.com/api/v2/users/44.json
+               verified:  false
+
+**** Result[17/26]
+                    _id:  47
+                 active:  false
+                  alias:  Mr Doris
+             created_at:  2016-05-17T04:06:23 -10:00
+                  email:  dorisschultz@flotonic.com
+            external_id:  3abbffbf-eb9d-4738-825b-cf3c3e76f215
+          last_login_at:  2015-10-06T09:27:54 -11:00
+                 locale:  en-AU
+                   name:  Dawson Schultz
+        organization_id:  122
+                  phone:  9595-373-294
+                   role:  end-user
+                 shared:  true
+              signature:  Don't Worry Be Happy!
+              suspended:  true
+                tags[0]:  Linganore
+                tags[1]:  Alleghenyville
+                tags[2]:  Cataract
+                tags[3]:  Woodruff
+               timezone:  Martinique
+                    url:  http://initech.zendesk.com/api/v2/users/47.json
+               verified:  false
+
+**** Result[18/26]
+                    _id:  49
+                 active:  true
+                  alias:  Miss Jody
+             created_at:  2016-05-12T08:39:30 -10:00
+                  email:  jodyholcomb@flotonic.com
+            external_id:  4bd5e757-c0cd-445b-b702-ee3ed794f6c4
+          last_login_at:  2014-12-04T12:51:36 -11:00
+                 locale:  zh-CN
+                   name:  Faulkner Holcomb
+        organization_id:  118
+                  phone:  9255-943-719
+                   role:  end-user
+                 shared:  true
+              signature:  Don't Worry Be Happy!
+              suspended:  true
+                tags[0]:  Hanover
+                tags[1]:  Woodlake
+                tags[2]:  Saticoy
+                tags[3]:  Hinsdale
+               timezone:  Antigua and Barbuda
+                    url:  http://initech.zendesk.com/api/v2/users/49.json
+               verified:  false
+
+**** Result[19/26]
+                    _id:  51
+                 active:  true
+                  alias:  Miss Esmeralda
+             created_at:  2016-01-21T06:02:01 -11:00
+                  email:  esmeraldabuckley@flotonic.com
+            external_id:  4a4adf11-a0e8-461d-b310-0e52a052dc73
+          last_login_at:  2015-03-01T03:06:05 -11:00
+                 locale:  de-CH
+                   name:  Green Buckley
+        organization_id:  125
+                  phone:  8154-223-420
+                   role:  end-user
+                 shared:  false
+              signature:  Don't Worry Be Happy!
+              suspended:  true
+                tags[0]:  Chumuckla
+                tags[1]:  Dixie
+                tags[2]:  Yardville
+                tags[3]:  Riverton
+               timezone:  Seychelles
+                    url:  http://initech.zendesk.com/api/v2/users/51.json
+               verified:  true
+
+**** Result[20/26]
+                    _id:  53
+                 active:  false
+                  alias:  Miss Middleton
+             created_at:  2016-02-24T05:40:40 -11:00
+                  email:  middletonlang@flotonic.com
+            external_id:  99006a7e-3279-416d-a2f2-d92aca820ec0
+          last_login_at:  2014-03-03T08:54:37 -11:00
+                 locale:  en-AU
+                   name:  Pena Lang
+        organization_id:  113
+                  phone:  9174-113-995
+                   role:  end-user
+                 shared:  false
+              signature:  Don't Worry Be Happy!
+              suspended:  false
+                tags[0]:  Roderfield
+                tags[1]:  Lemoyne
+                tags[2]:  Grantville
+                tags[3]:  Fredericktown
+               timezone:  Liechtenstein
+                    url:  http://initech.zendesk.com/api/v2/users/53.json
+               verified:  true
+
+   .done|.d to stop
+   .quit|.q to exit
+   or enter to continue
+
+7 results remaining # 
