@@ -43,7 +43,14 @@ func scan_or_exit(scanner *bufio.Scanner) string {
     return scanner.Text()
 }
 
-// TODO: Explain the FSA
+// A simple, single dimension, finite state machine for handling the
+// gathering of user input.
+//
+// Allows navigation between the various query phases and
+// re-use of previously entered values - avoiding the need to re-enter
+// the dataset and key each time which might be useful when
+// searching for customers with hard-to-spell names .
+//
 func enter_interactive_loop(directory string) {
     scanner := bufio.NewScanner(os.Stdin)
 
@@ -139,6 +146,9 @@ func prompt_for_input(prompt string, help string) {
     fmt.Printf("\nEnter a %v to search ", prompt)
 }
 
+
+// NO attempt at field validation is attempted least the record fields vary.
+// You gets what you ask for
 func select_field(state ui_search_state) ui_search_state {
     prompt_for_input("term", "available fields")
     fmt.Printf("%v # ", state.active_set.title)

@@ -6,7 +6,7 @@ build:
 run: build
 	json_search
 
-# Higher iterations take a _really_ long time
+# Higher iterations take a _really_ long time (about a day)
 perfdata:
 	for n in $(SIZES); do echo "Creating organizations-$$n.json"; build-data.sh data/organizations-$$n.json $$n; done
 
