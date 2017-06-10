@@ -1,0 +1,7 @@
+Could not parse data/missing-value.json (either as json, or into the expected format): invalid character ',' looking for beginning of value
+
+Searching 1 records for entries with 'tags' equal to 'Veguita'
+Unhandled type map in filter for key tags
+0 record(s) 
+Could not parse data/single-record.json (either as json, or into the expected format): json: cannot unmarshal object into Go value of type []map[string]interface {}
+Could not parse data/invalid.json (either as json, or into the expected format): invalid character '{' looking for beginning of object key string
