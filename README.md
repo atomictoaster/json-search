@@ -58,7 +58,7 @@ considered replacements for a proper database.
 
 ### Interactive mode
 
-```# json_search```
+```# json_search [-data path_to_directory_with_json_files]```
 
 Sample session:
 
@@ -205,6 +205,17 @@ parameters can also be invoked from the command-line to facilitate
 testing.
 
 ```
+# json_search --help
+Usage of json_search:
+  -data string
+    	Path to a directory containing valid JSON files (default "./")
+  -filename string
+    	File containing valid JSON
+  -key string
+    	JSON key to search for
+  -value string
+    	Value which the specified key must contain
+
 # json_search -filename users.json -key tags -value Mulino
 Parsed users.json in 1.72752ms
 Searching 75 records for entries with 'tags' equal to 'Mulino'

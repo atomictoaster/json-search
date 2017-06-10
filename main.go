@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-    datadir := flag.String("data", "./", "File containing valid JSON")
+    datadir := flag.String("data", "./", "Path to a directory containing valid JSON files")
     filename := flag.String("filename", "", "File containing valid JSON")
     search_key := flag.String("key", "", "JSON key to search for")
     search_value := flag.String("value", "", "Value which the specified key must contain")
