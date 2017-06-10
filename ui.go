@@ -165,7 +165,12 @@ func select_field(state ui_search_state) ui_search_state {
             if len(state.active_set.json_data) > 0 {
                 // Assume for now that records are sufficiently uniform
                 fmt.Printf("\n%v records contain the following fields:\n", strings.TrimSuffix(state.active_set.title, "s"))
+                keys := make([]string, 0)
                 for key, _:= range state.active_set.json_data[0] { 
+                    keys = append(keys, key)
+                }
+                sort.Strings(keys)
+                for _, key := range keys {
                     fmt.Printf("* %s\n", key)
                 }
             } else {
@@ -179,9 +184,6 @@ func select_field(state ui_search_state) ui_search_state {
     return state
 }
 
-func show_value_help(set *dataset, key string, title string) {
-
-}
 func select_value(state ui_search_state) ui_search_state {
     prompt_for_input("value", "example values")
     fmt.Printf("%v[%v] # ", state.active_set.title, state.key)

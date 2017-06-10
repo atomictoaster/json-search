@@ -10,25 +10,25 @@ Please select a dataset to search, or '.quit' to exit:
 
 Enter a term to search Users # 
 User records contain the following fields:
-* url
-* external_id
-* locale
-* timezone
-* organization_id
 * _id
-* name
+* active
 * alias
 * created_at
-* verified
-* shared
-* last_login_at
 * email
+* external_id
+* last_login_at
+* locale
+* name
+* organization_id
 * phone
 * role
-* active
+* shared
 * signature
-* tags
 * suspended
+* tags
+* timezone
+* url
+* verified
 
    '.help|.h' to see available fields
    '.back|.b' to go back
