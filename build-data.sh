@@ -11,7 +11,8 @@ function word() {
 }
 echo "[" > $filename
 
-for record in $(seq 1 $max); do
+record=1
+while [ $record != $max ]; do
 cat<<EOF>>$filename
   {
     "_id": ${record},
@@ -36,6 +37,7 @@ cat<<EOF>>$filename
   }
 EOF
 
+record=$(($record + 1))
 if [ $record != $max ]; then
     echo "    ," >> $filename
 fi
