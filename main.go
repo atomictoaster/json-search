@@ -1,6 +1,7 @@
 package main
 import (
     "os"
+    "fmt"
     "flag"
 )
 
@@ -12,7 +13,12 @@ func main() {
 
     flag.Parse()
     if len(*filename) > 0 && len(*search_key) > 0 {
-        if search_file(*filename, *search_key, *search_value) > 0 {
+        results := search_file(*filename, *search_key, *search_value)
+        for index , record := range results {
+            fmt.Printf("\n**** Result[%v/%v]\n", index+1, len(results))
+            print_record(record)
+        }
+        if len(results) > 0 {
            os.Exit(0)
         }
         os.Exit(1) // No result found
