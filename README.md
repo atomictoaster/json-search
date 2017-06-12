@@ -21,6 +21,9 @@
   directory.
 - All fields are compared as strings and require full text
   equality in order to be considered a match.
+- Users get exactly what they ask for.  No attempt is made to force
+  the search key to match known possibilities or the value to conform
+  to specific formats.
 
 ## Requirements
 
