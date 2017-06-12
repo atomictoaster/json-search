@@ -15,6 +15,8 @@ test:
 	diff -u data/parser.{expected,out}
 	cat data/session | json_search | sed -e 's/found in.*//' -e 's/Parsed .* in .*//' > data/session.out
 	diff -u data/session.{expected,out}
+	json_search -filename users.json -key signature -value "Unicode ist spaß" | sed -e 's/found in.*//' -e 's/Parsed .* in .*//'  > data/unicode.out
+	diff -u data/unicode.{expected,out}
 
 perf: 
 	for n in $(SIZES); do json_search -filename data/organizations-$$n.json -key _id -value 678; done

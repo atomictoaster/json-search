@@ -11,8 +11,11 @@
   to use the first few records when providing sample values and key
   list.
 - No explicit consideration of non-ascii characters was made for this
-  version, though it is likely that if you can type it you can
-  search for it.
+  version. If you can type it you can search for it however no
+  normalization will occur, so the same letter formed by different
+  means is unlikely to match.  Discussion of normalization issues as
+  related to APFS:
+  https://eclecticlight.co/2017/04/06/apfs-is-currently-unusable-with-most-non-english-languages/
 - No fields or values will be the string '.help', '.quit', or '.back'
 - No-one would create a directory with a '.json' suffix in the data
   directory.
