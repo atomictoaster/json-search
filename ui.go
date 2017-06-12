@@ -177,11 +177,33 @@ func select_field(state ui_search_state) ui_search_state {
                 fmt.Printf("* No records found *\n")
             }
         default:
-            state.key = user_input
-            state.phase += 1
+	    if validate_field(state, user_input) {
+                state.key = user_input
+                state.phase += 1
+	    }
     }
 
     return state
+}
+
+func validate_field(state ui_search_state, field string) bool {
+    if len(state.active_set.json_data) == 0 {
+       return true // Irrelevant whether the field exists or not, there are no records
+    }
+
+    if _, present := state.active_set.json_data[0][field]; present == false {
+       fmt.Printf("Key '%v' is not an expected key for %v. Continue anyway (Yn)? ", field, state.active_set.title)
+
+       user_input := scan_or_exit(state.scanner)
+       fmt.Printf("\n")
+       switch user_input {
+           case "no", "No", "NO", "n":
+	       return false
+	   default:
+	       return true
+       }
+    }
+    return true
 }
 
 func select_value(state ui_search_state) ui_search_state {

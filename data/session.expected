@@ -3,6 +3,11 @@ JSON Search Tool
 Please select a dataset to search, or '.quit' to exit:
    1) Organizations 2) Tickets 3) Users 
 # 
+Invalid selection: 'a'.  Enter the number of a dataset instead.
+
+Please select a dataset to search, or '.quit' to exit:
+   1) Organizations 2) Tickets 3) Users 
+# 
 
 
    '.help|.h' to see available fields
@@ -30,6 +35,12 @@ User records contain the following fields:
 * timezone
 * url
 * verified
+
+   '.help|.h' to see available fields
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a term to search Users # Key 'id' is not an expected key for Users. Continue anyway (Yn)? 
 
    '.help|.h' to see available fields
    '.back|.b' to go back
@@ -607,3 +618,51 @@ Enter a value to search Users[role] # Searching 75 records for entries with 'rol
    or enter to continue
 
 7 results remaining # 
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Users[role] # 
+   '.help|.h' to see available fields
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a term to search Users # 
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Users[signature] # Searching 75 records for entries with 'signature' equal to 'Unicode ist spaß'
+1 record(s) 
+
+**** Result[1/1]
+                    _id:  1
+                 active:  true
+                  alias:  Miss Coffey
+             created_at:  2016-04-15T05:19:46 -10:00
+                  email:  coffeyrasmussen@flotonic.com
+            external_id:  74341f74-9c79-49d5-9611-87ef9b6eb75f
+          last_login_at:  2013-08-04T01:03:27 -10:00
+                 locale:  en-AU
+                   name:  Francisca Rasmussen
+        organization_id:  119
+                  phone:  8335-422-718
+                   role:  admin
+                 shared:  false
+              signature:  Unicode ist spaß
+              suspended:  true
+                tags[0]:  Springville
+                tags[1]:  Sutton
+                tags[2]:  Hartsville/Hartley
+                tags[3]:  Diaperville
+               timezone:  Sri Lanka
+                    url:  http://initech.zendesk.com/api/v2/users/1.json
+               verified:  true
+
+End of results
+
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Users[signature] # 
