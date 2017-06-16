@@ -165,16 +165,12 @@ func select_field(state ui_search_state) ui_search_state {
             if len(state.active_set.json_data) > 0 {
                 // Assume for now that records are sufficiently uniform
                 fmt.Printf("\n%v records contain the following fields:\n", strings.TrimSuffix(state.active_set.title, "s"))
-                keys := make([]string, 0)
-                for key, _:= range state.active_set.json_data[0] { 
-                    keys = append(keys, key)
-                }
-                sort.Strings(keys)
+		keys := sorted_record_keys(state.active_set.json_data[0])
                 for _, key := range keys {
                     fmt.Printf("* %s\n", key)
                 }
             } else {
-                fmt.Printf("* No records found *\n")
+                fmt.Printf("* No records or keys found *\n")
             }
         default:
 	    if validate_field(state, user_input) {
@@ -284,6 +280,15 @@ func perform_search(state ui_search_state) ui_search_state {
     return state
 }
 
+func sorted_record_keys(record map[string]interface{}) []string {
+    keys := make([]string, 0)
+    for key, _:= range record {
+        keys = append(keys, key)
+    }
+    sort.Strings(keys)
+    return keys
+}
+
 func print_record(result map[string]interface{}) {
     // Sorting ensures we get a stable output (great for regression
     // tests) and aids humans to quickly skip over parts of the 
@@ -291,11 +296,7 @@ func print_record(result map[string]interface{}) {
     //
     // Not exactly efficient to recompute every time,
     // but reliable if any additional fields ever sneak in
-    keys := make([]string, 0)
-    for key, _:= range result {
-        keys = append(keys, key)
-    }
-    sort.Strings(keys)
+    keys := sorted_record_keys(result)
 
     for _, key := range keys {
         switch typed_value := result[key].(type) {
