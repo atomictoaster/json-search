@@ -666,3 +666,362 @@ End of results
    '.quit|.q' to exit
 
 Enter a value to search Users[signature] # 
+   '.help|.h' to see available fields
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a term to search Users # 
+Please select a dataset to search, or '.quit' to exit:
+   1) Organizations 2) Tickets 3) Users 
+# 
+
+
+   '.help|.h' to see available fields
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a term to search Tickets # 
+Ticket records contain the following fields:
+* _id
+* assignee_id
+* created_at
+* description
+* due_at
+* external_id
+* has_incidents
+* organization_id
+* priority
+* status
+* subject
+* submitter_id
+* tags
+* type
+* url
+* via
+
+   '.help|.h' to see available fields
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a term to search Tickets # 
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Tickets[status] # 
+Ticket records contain 'status' values like:
+* pending
+* hold
+* closed
+* solved
+
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Tickets[status] # Searching 200 records for entries with 'status' equal to 'pending'
+45 record(s) 
+
+**** Result[1/45]
+                    _id:  436bf9b0-1147-4c0a-8439-6f79833bff5b
+            assignee_id:  24
+             created_at:  2016-04-28T11:19:34 -10:00
+            description:  Nostrud ad sit velit cupidatat laboris ipsum nisi amet laboris ex exercitation amet et proident. Ipsum fugiat aute dolore tempor nostrud velit ipsum.
+                 due_at:  2016-07-31T02:37:50 -10:00
+            external_id:  9210cdc9-4bee-485f-a078-35396cd74063
+          has_incidents:  false
+        organization_id:  116
+               priority:  high
+                 status:  pending
+                subject:  A Catastrophe in Korea (North)
+           submitter_id:  38
+                tags[0]:  Ohio
+                tags[1]:  Pennsylvania
+                tags[2]:  American Samoa
+                tags[3]:  Northern Mariana Islands
+                   type:  incident
+                    url:  http://initech.zendesk.com/api/v2/tickets/436bf9b0-1147-4c0a-8439-6f79833bff5b.json
+                    via:  web
+
+**** Result[2/45]
+                    _id:  c08537d2-116d-45ff-a6d0-60c1a7d4778f
+            assignee_id:  64
+             created_at:  2016-05-15T01:23:37 -10:00
+            description:  Ut in minim ea ipsum anim nostrud in et aliqua. Magna est tempor sit do deserunt nostrud non fugiat Lorem officia Lorem dolore ullamco.
+                 due_at:  2016-08-06T07:35:44 -10:00
+            external_id:  0f534118-467e-438f-9cfd-fad0fe4a0b1e
+          has_incidents:  true
+        organization_id:  113
+               priority:  normal
+                 status:  pending
+                subject:  A Drama in British Indian Ocean Territory
+           submitter_id:  65
+                tags[0]:  Mississippi
+                tags[1]:  Marshall Islands
+                tags[2]:  South Dakota
+                tags[3]:  Montana
+                   type:  task
+                    url:  http://initech.zendesk.com/api/v2/tickets/c08537d2-116d-45ff-a6d0-60c1a7d4778f.json
+                    via:  chat
+
+**** Result[3/45]
+                    _id:  9a21f37a-8ac5-4ef1-8b99-f1d4ca9cf170
+            assignee_id:  18
+             created_at:  2016-02-05T10:36:14 -11:00
+            description:  Ut et aliquip tempor incididunt adipisicing id. Aliquip ut dolor esse mollit do laboris cillum qui fugiat.
+                 due_at:  2016-07-30T01:49:16 -10:00
+            external_id:  09c3cefd-2149-4491-9993-d6b84fc7fbf4
+          has_incidents:  true
+        organization_id:  115
+               priority:  high
+                 status:  pending
+                subject:  A Problem in Turkey
+           submitter_id:  52
+                tags[0]:  District Of Columbia
+                tags[1]:  Wisconsin
+                tags[2]:  Illinois
+                tags[3]:  Fédératéd Statés Of Micronésia
+                   type:  task
+                    url:  http://initech.zendesk.com/api/v2/tickets/9a21f37a-8ac5-4ef1-8b99-f1d4ca9cf170.json
+                    via:  chat
+
+**** Result[4/45]
+                    _id:  ded8a85b-3d18-4b21-ad77-e7ded3d09dcf
+            assignee_id:  68
+             created_at:  2016-04-23T11:14:42 -10:00
+            description:  Ut labore nulla minim non excepteur ex consequat do commodo cupidatat est eu eu esse. Ad voluptate do sint id velit exercitation Lorem.
+                 due_at:  2016-08-18T10:51:32 -10:00
+            external_id:  4ec22934-4aa7-454c-8162-fa578c7211d9
+          has_incidents:  false
+        organization_id:  120
+               priority:  high
+                 status:  pending
+                subject:  A Drama in Uruguay
+           submitter_id:  4
+                tags[0]:  Oklahoma
+                tags[1]:  Louisiana
+                tags[2]:  Massachusetts
+                tags[3]:  New York
+                   type:  question
+                    url:  http://initech.zendesk.com/api/v2/tickets/ded8a85b-3d18-4b21-ad77-e7ded3d09dcf.json
+                    via:  voice
+
+**** Result[5/45]
+                    _id:  25c518a8-4bd9-435a-9442-db4202ec1da4
+            assignee_id:  72
+             created_at:  2016-01-11T08:56:20 -11:00
+            description:  Magna consequat cillum pariatur fugiat aliquip incididunt est velit ex ipsum. Sunt ullamco ea pariatur proident consectetur id anim.
+                 due_at:  2016-08-21T10:41:42 -10:00
+            external_id:  ff8be0f9-8b86-406e-a110-9ba1ca839850
+          has_incidents:  false
+        organization_id:  103
+               priority:  high
+                 status:  pending
+                subject:  A Drama in Iraq
+           submitter_id:  60
+                tags[0]:  Utah
+                tags[1]:  Hawaii
+                tags[2]:  Alaska
+                tags[3]:  Maryland
+                   type:  problem
+                    url:  http://initech.zendesk.com/api/v2/tickets/25c518a8-4bd9-435a-9442-db4202ec1da4.json
+                    via:  chat
+
+**** Result[6/45]
+                    _id:  9cbbadfe-7242-4d5a-af78-62aa7191d944
+            assignee_id:  64
+             created_at:  2016-01-30T12:45:37 -11:00
+            description:  Laboris irure aliquip quis consequat Lorem aute irure enim incididunt officia duis ipsum. Velit consequat id irure irure irure Lorem labore.
+                 due_at:  2016-08-14T09:28:10 -10:00
+            external_id:  d193deb7-92d5-4004-a532-4a1cd30449c5
+          has_incidents:  false
+        organization_id:  119
+               priority:  high
+                 status:  pending
+                subject:  A Nuisance in Bangladesh
+           submitter_id:  43
+                tags[0]:  Kentucky
+                tags[1]:  North Carolina
+                tags[2]:  South Carolina
+                tags[3]:  Indiana
+                   type:  task
+                    url:  http://initech.zendesk.com/api/v2/tickets/9cbbadfe-7242-4d5a-af78-62aa7191d944.json
+                    via:  voice
+
+**** Result[7/45]
+                    _id:  e68d8bfd-9826-42fd-9692-add445aa7430
+             created_at:  2016-06-30T06:59:04 -10:00
+            description:  Aute eiusmod nostrud cillum fugiat labore nulla laborum excepteur nostrud eiusmod. Sunt eu irure fugiat nulla cupidatat dolore anim dolore.
+                 due_at:  2016-08-13T02:51:04 -10:00
+            external_id:  82c58b0f-9958-4af6-b17c-5c23185ef0f9
+          has_incidents:  false
+               priority:  normal
+                 status:  pending
+                subject:  A Catastrophe in Falkland Islands (Malvinas)
+           submitter_id:  17
+                tags[0]:  Georgia
+                tags[1]:  Tennessee
+                tags[2]:  Mississippi
+                tags[3]:  Marshall Islands
+                   type:  question
+                    url:  http://initech.zendesk.com/api/v2/tickets/e68d8bfd-9826-42fd-9692-add445aa7430.json
+                    via:  voice
+
+**** Result[8/45]
+                    _id:  3d0d0ce2-6d1b-4f8d-a743-3863aeb29aab
+            assignee_id:  64
+             created_at:  2016-06-07T12:05:31 -10:00
+            description:  Reprehenderit eiusmod dolore deserunt deserunt nostrud labore amet exercitation laborum. Consequat enim nostrud in id voluptate esse nostrud deserunt quis culpa cillum nulla ullamco nulla.
+                 due_at:  2016-08-07T05:39:40 -10:00
+            external_id:  a6793810-40a3-486c-a002-bd43b384c759
+          has_incidents:  false
+        organization_id:  118
+               priority:  urgent
+                 status:  pending
+                subject:  A Problem in Pitcairn
+           submitter_id:  41
+                tags[0]:  Guam
+                tags[1]:  Colorado
+                tags[2]:  Washington
+                tags[3]:  Wyoming
+                   type:  task
+                    url:  http://initech.zendesk.com/api/v2/tickets/3d0d0ce2-6d1b-4f8d-a743-3863aeb29aab.json
+                    via:  chat
+
+**** Result[9/45]
+                    _id:  35072cd7-e343-4d8e-a967-bbe32eb019cb
+            assignee_id:  12
+             created_at:  2016-04-07T05:09:10 -10:00
+            description:  Eu adipisicing cillum et laborum exercitation fugiat mollit sunt eu non nulla tempor. Eu amet occaecat tempor incididunt adipisicing quis magna occaecat ut.
+                 due_at:  2016-08-07T04:44:19 -10:00
+            external_id:  61749684-ca19-4589-8872-28b08317e395
+          has_incidents:  true
+        organization_id:  116
+               priority:  low
+                 status:  pending
+                subject:  A Catastrophe in Macau
+           submitter_id:  53
+                tags[0]:  California
+                tags[1]:  Palau
+                tags[2]:  Kentucky
+                tags[3]:  North Carolina
+                   type:  task
+                    url:  http://initech.zendesk.com/api/v2/tickets/35072cd7-e343-4d8e-a967-bbe32eb019cb.json
+                    via:  chat
+
+**** Result[10/45]
+                    _id:  01731a8f-7c00-40ca-94a1-6b874abd1d17
+            assignee_id:  36
+             created_at:  2016-03-13T02:28:57 -11:00
+            description:  Nulla reprehenderit ipsum duis laborum ipsum excepteur occaecat veniam enim aliqua incididunt amet. Non cillum aliquip reprehenderit esse laboris labore consectetur sunt laborum consequat nisi dolor.
+                 due_at:  2016-08-09T10:22:25 -10:00
+            external_id:  05c8b210-1659-4248-9343-0b70bc680cae
+          has_incidents:  false
+        organization_id:  124
+               priority:  urgent
+                 status:  pending
+                subject:  A Nuisance in Egypt
+           submitter_id:  52
+                tags[0]:  South Carolina
+                tags[1]:  Indiana
+                tags[2]:  New Mexico
+                tags[3]:  Nebraska
+                   type:  incident
+                    url:  http://initech.zendesk.com/api/v2/tickets/01731a8f-7c00-40ca-94a1-6b874abd1d17.json
+                    via:  web
+
+   .done|.d to stop
+   .quit|.q to exit
+   or enter to continue
+
+36 results remaining # 
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Tickets[status] # 
+   '.help|.h' to see available fields
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a term to search Tickets # 
+Please select a dataset to search, or '.quit' to exit:
+   1) Organizations 2) Tickets 3) Users 
+# 
+
+
+   '.help|.h' to see available fields
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a term to search Organizations # 
+Organization records contain the following fields:
+* _id
+* created_at
+* details
+* domain_names
+* external_id
+* name
+* shared_tickets
+* tags
+* url
+
+   '.help|.h' to see available fields
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a term to search Organizations # 
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Organizations[tags] # 
+Organization records contain 'tags' values like:
+* Fulton
+* West
+* Rodriguez
+* Farley
+* Cherry
+* Collier
+* Fuentes
+* Trevino
+* Parrish
+* Lindsay
+* Armstrong
+* Vaughn
+* Hendricks
+* Mclaughlin
+* Stephens
+* Garner
+
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Organizations[tags] # Searching 25 records for entries with 'tags' equal to 'Lindsay'
+1 record(s) 
+
+**** Result[1/1]
+                    _id:  103
+             created_at:  2016-05-28T04:40:37 -10:00
+                details:  Non profit
+        domain_names[0]:  comvex.com
+        domain_names[1]:  automon.com
+        domain_names[2]:  verbus.com
+        domain_names[3]:  gogol.com
+            external_id:  e73240f3-8ecf-411d-ad0d-80ca8a84053d
+                   name:  Plasmos
+         shared_tickets:  false
+                tags[0]:  Parrish
+                tags[1]:  Lindsay
+                tags[2]:  Armstrong
+                tags[3]:  Vaughn
+                    url:  http://initech.zendesk.com/api/v2/organizations/103.json
+
+End of results
+
+   '.help|.h' to see example values
+   '.back|.b' to go back
+   '.quit|.q' to exit
+
+Enter a value to search Organizations[tags] # 
